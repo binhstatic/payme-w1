@@ -1,19 +1,20 @@
 import { Suspense, lazy, useEffect, useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
 
-import Spinner from './components/Spinner/Spinner';
-import Categories from './routes/Categories/Categories';
-import Category from './routes/Category/Category';
-import Checkout from './routes/Checkout/Checkout';
 import {
   getFirebaseToken,
   onForegroundMessage,
 } from './utils/firebase/firebase.utils';
-import { ToastContainer } from 'react-toastify';
+
+import Spinner from './components/Spinner/Spinner';
+import Categories from './routes/Categories/Categories';
+import Category from './routes/Category/Category';
 
 const Navigation = lazy(() => import('./routes/Navigation/Navigation'));
 const Home = lazy(() => import('./routes/Home/Home'));
 const Shop = lazy(() => import('./routes/Shop/Shop'));
+const Checkout = lazy(() => import('./routes/Checkout/Checkout'));
 
 function App() {
   const [showNotificationBanner, setShowNotificationBanner] = useState(
@@ -52,8 +53,8 @@ function App() {
 
   const ToastifyNotification = ({ title, body }) => (
     <div className='push-notification'>
-      <h2 className='push-notification-title'>{title}</h2>
-      <p className='push-notification-text'>{body}</p>
+      <h2 className='push-notification__title'>{title}</h2>
+      <p className='push-notification__ text'>{body}</p>
     </div>
   );
 

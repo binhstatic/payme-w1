@@ -18,12 +18,10 @@ const firebaseApp = initializeApp(firebaseConfig);
 export const db = getFirestore();
 
 export const getCategoriesAndDocuments = async (): Promise<Category[]> => {
-  console.log('ddddd');
+  console.log('getCategoriesAndDocuments');
   const collectionRef = collection(db, 'categories');
   const q = query(collectionRef);
-
   const querySnapshot = await getDocs(q);
-  console.log(querySnapshot);
   return querySnapshot.docs.map(
     (docSnapshot) => docSnapshot.data() as Category
   );

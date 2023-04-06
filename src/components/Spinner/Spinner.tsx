@@ -2,8 +2,8 @@ import './spinner.scss';
 
 const Spinner = () => {
   return (
-    <div className='spinner-overlay'>
-      <div className='spinner-container'></div>
+    <div className='spinner'>
+      <div className='spinner__rotate'></div>
     </div>
   );
 };

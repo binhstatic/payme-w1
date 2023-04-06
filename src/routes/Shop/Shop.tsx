@@ -7,7 +7,6 @@ const Shop = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    console.log('shop');
     dispatch(fetchCategoriesStart());
   }, []);
 
