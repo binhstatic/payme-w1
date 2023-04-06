@@ -39,7 +39,8 @@ function App() {
   const handleGetFirebaseToken = () => {
     getFirebaseToken()
       .then((firebaseToken) => {
-        console.log('Firebase token: ', firebaseToken);
+        alert('Firebase token: ' + firebaseToken);
+        console.log('Firebase token: ' + firebaseToken);
         if (firebaseToken) {
           setShowNotificationBanner(false);
         }
