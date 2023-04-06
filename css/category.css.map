@@ -1,9 +1,0 @@
-{
-    "version": 3,
-    "mappings": "AACG,AAAD,gBAAQ,CAAC;EACP,SAAS,EAAE,IAAI;EACf,aAAa,EAAE,IAAI;EACnB,UAAU,EAAE,MAAM;CACnB;;AAEA,AAAD,oBAAY,CAAC;EACX,OAAO,EAAE,IAAI;EACb,qBAAqB,EAAE,cAAc;EACrC,UAAU,EAAE,IAAI;EAChB,OAAO,EAAE,IAAI;CACd",
-    "sources": [
-        "../src/routes/Category/category.scss"
-    ],
-    "names": [],
-    "file": "category.css"
-}
