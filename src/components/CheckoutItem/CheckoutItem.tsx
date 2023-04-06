@@ -3,6 +3,7 @@ import { CartItem } from '../../store/cart/cart.types';
 
 import './checkoutItem.scss';
 import { useDispatch, useSelector } from 'react-redux';
+
 import { selectCartItems } from '../../store/cart/cart.selector';
 import {
   addItemToCart,

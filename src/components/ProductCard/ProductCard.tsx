@@ -1,10 +1,12 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { CategoryItem } from '../../store/categories/category.types';
+
 import Button, { BUTTON_TYPE_CLASSES } from '../Button/Button';
 
-import './productCard.scss';
+import { CategoryItem } from '../../store/categories/category.types';
 import { selectCartItems } from '../../store/cart/cart.selector';
 import { addItemToCart } from '../../store/cart/cart.action';
+
+import './productCard.scss';
 
 type ProductCardProps = {
   product: CategoryItem;

@@ -1,10 +1,12 @@
 import { useSelector } from 'react-redux';
+
 import CategoryPreview from '../../components/CategoryPreview/CategoryPreview';
+import Spinner from '../../components/Spinner/Spinner';
+
 import {
   selectCategoriesIsLoading,
   selectCategoriesMap,
 } from '../../store/categories/category.selector';
-import Spinner from '../../components/Spinner/Spinner';
 
 const Categories = () => {
   const categoriesMap = useSelector(selectCategoriesMap);

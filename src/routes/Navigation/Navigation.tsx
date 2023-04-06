@@ -1,11 +1,12 @@
 import { Link, Outlet } from 'react-router-dom';
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 import CartDropDown from '../../components/CartDropdown/CartDropDown';
 import CartIcon from '../../components/CartIcon/CartIcon';
 
-import './navigation.scss';
 import { selectIsCartOpen } from '../../store/cart/cart.selector';
+
+import './navigation.scss';
 
 const Navigation = () => {
   const isCartOpen = useSelector(selectIsCartOpen);

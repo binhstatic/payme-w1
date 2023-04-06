@@ -1,13 +1,15 @@
 import { useParams } from 'react-router-dom';
-import ProductCard from '../../components/ProductCard/ProductCard';
-
-import './category.scss';
 import { useSelector } from 'react-redux';
+
+import ProductCard from '../../components/ProductCard/ProductCard';
+import Spinner from '../../components/Spinner/Spinner';
+
 import {
   selectCategoriesIsLoading,
   selectCategoriesMap,
 } from '../../store/categories/category.selector';
-import Spinner from '../../components/Spinner/Spinner';
+
+import './category.scss';
 
 type CategoryRouteParams = {
   category: string;

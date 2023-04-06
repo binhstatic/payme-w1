@@ -1,15 +1,15 @@
-import React from 'react';
+import { useSelector } from 'react-redux';
+import { toast } from 'react-toastify';
 
 import CheckoutItem from '../../components/CheckoutItem/CheckoutItem';
+import Button, { BUTTON_TYPE_CLASSES } from '../../components/Button/Button';
 
-import './checkout.scss';
 import {
   selectCartItems,
   selectCartTotal,
 } from '../../store/cart/cart.selector';
-import { useSelector } from 'react-redux';
-import Button, { BUTTON_TYPE_CLASSES } from '../../components/Button/Button';
-import { toast } from 'react-toastify';
+
+import './checkout.scss';
 
 const Checkout = () => {
   const cartItems = useSelector(selectCartItems);

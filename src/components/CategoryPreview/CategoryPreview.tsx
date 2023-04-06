@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom';
-import { CategoryItem } from '../../store/categories/category.types';
+
 import ProductCard from '../ProductCard/ProductCard';
+
+import { CategoryItem } from '../../store/categories/category.types';
 
 import './categoryPreview.scss';
 
