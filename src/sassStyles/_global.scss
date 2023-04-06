@@ -19,3 +19,14 @@ a {
 * {
   box-sizing: border-box;
 }
+
+.notification-banner {
+  display: inline-block;
+  padding: 5px;
+  background-color: red;
+  text-transform: uppercase;
+
+  &__link {
+    color: white;
+  }
+}

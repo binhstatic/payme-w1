@@ -63,10 +63,10 @@ function App() {
         <div className='notification-banner'>
           <a
             href='#'
-            className='notification-banner-link'
+            className='notification-banner__link'
             onClick={handleGetFirebaseToken}
           >
-            Click here to enable push notifications.
+            Click here to enable push notifications
           </a>
         </div>
       )}
