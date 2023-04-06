@@ -8,8 +8,6 @@ import {
 } from './utils/firebase/firebase.utils';
 
 import Spinner from './components/Spinner/Spinner';
-import Categories from './routes/Categories/Categories';
-import Category from './routes/Category/Category';
 
 const Navigation = lazy(() => import('./routes/Navigation/Navigation'));
 const Home = lazy(() => import('./routes/Home/Home'));
@@ -74,10 +72,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Navigation />}>
           <Route index element={<Home />} />
-          <Route path='shop' element={<Shop />}>
-            <Route index element={<Categories />} />
-            <Route path=':category' element={<Category />} />
-          </Route>
+          <Route path='shop/*' element={<Shop />} />
           <Route path='checkout' element={<Checkout />} />
         </Route>
       </Routes>

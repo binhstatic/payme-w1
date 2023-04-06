@@ -12,6 +12,6 @@ export const getCategories = async (): Promise<Category[]> => {
       } else {
         reject('An error occurred');
       }
-    }, 2000);
+    }, 1000);
   });
 };

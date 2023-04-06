@@ -10,6 +10,7 @@ import {
 } from '../../store/categories/category.selector';
 
 import './category.scss';
+import { useEffect, useMemo, useState } from 'react';
 
 type CategoryRouteParams = {
   category: string;
@@ -20,9 +21,11 @@ const Category = () => {
     keyof CategoryRouteParams
   >() as CategoryRouteParams;
   const categoriesMap = useSelector(selectCategoriesMap);
-  console.log(categoriesMap);
   const isLoading = useSelector(selectCategoriesIsLoading);
-  const products = categoriesMap[category];
+  const products = useMemo(
+    () => categoriesMap[category],
+    [categoriesMap, category]
+  );
 
   return (
     <>
@@ -31,9 +34,13 @@ const Category = () => {
         <Spinner />
       ) : (
         <div className='category__container'>
-          {products.map((product) => (
-            <ProductCard key={product.id} product={product} />
-          ))}
+          {!products ? (
+            <p>No have data</p>
+          ) : (
+            products.map((product) => (
+              <ProductCard key={product.id} product={product} />
+            ))
+          )}
         </div>
       )}
     </>

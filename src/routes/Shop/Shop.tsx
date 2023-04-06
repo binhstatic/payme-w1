@@ -1,8 +1,11 @@
 import { useEffect } from 'react';
 import { Outlet } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
+import { Routes, Route } from 'react-router-dom';
 
 import { fetchCategoriesStart } from '../../store/categories/category.action';
+import Categories from '../Categories/Categories';
+import Category from '../Category/Category';
 
 const Shop = () => {
   const dispatch = useDispatch();
@@ -11,7 +14,12 @@ const Shop = () => {
     dispatch(fetchCategoriesStart());
   }, []);
 
-  return <Outlet />;
+  return (
+    <Routes>
+      <Route index element={<Categories />} />
+      <Route path=':category' element={<Category />} />
+    </Routes>
+  );
 };
 
 export default Shop;
