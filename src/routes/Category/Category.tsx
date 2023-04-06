@@ -1,8 +1,10 @@
 import { useParams } from 'react-router-dom';
 import ProductCard from '../../components/ProductCard/ProductCard';
-import { categoriesMap } from '../Categories/Categories';
 
 import './category.scss';
+import { useSelector } from 'react-redux';
+import { selectCategoriesMap } from '../../store/categories/category.selector';
+import { categoriesMap } from '../Categories/Categories';
 
 type CategoryRouteParams = {
   category: string;
@@ -12,7 +14,7 @@ const Category = () => {
   const { category } = useParams<
     keyof CategoryRouteParams
   >() as CategoryRouteParams;
-
+  // const categoriesMap = useSelector(selectCategoriesMap);
   const products = categoriesMap[category];
 
   return (

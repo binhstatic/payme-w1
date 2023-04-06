@@ -4,6 +4,8 @@ import storage from 'redux-persist/lib/storage';
 import logger from 'redux-logger';
 import createSagaMiddleware from 'redux-saga';
 
+import { rootSaga } from './root-saga';
+
 import { rootReducer } from './root-reducer';
 
 export type RootState = ReturnType<typeof rootReducer>;
@@ -46,5 +48,7 @@ export const store = createStore(
   undefined,
   composedEnhancers
 );
+
+// sagaMiddleware.run(rootSaga);
 
 export const persistor = persistStore(store);

@@ -10,12 +10,10 @@ import { selectIsCartOpen } from '../../store/cart/cart.selector';
 const Navigation = () => {
   const isCartOpen = useSelector(selectIsCartOpen);
 
-  console.log(isCartOpen);
-
   return (
     <>
       <div className='nav'>
-        <Link className='logo' to='/'>
+        <Link className='nav__logo' to='/'>
           PAYME
         </Link>
         <div className='nav__links'>

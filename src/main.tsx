@@ -7,6 +7,7 @@ import App from './App';
 import { persistor, store } from './store/store';
 
 import './sassStyles/_global.scss';
+import 'react-toastify/dist/ReactToastify.css';
 import { PersistGate } from 'redux-persist/integration/react';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(

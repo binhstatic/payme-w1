@@ -1,5 +1,7 @@
 import { CategoryMap } from '../../store/categories/category.types';
 import CategoryPreview from '../../components/CategoryPreview/CategoryPreview';
+import { useSelector } from 'react-redux';
+import { selectCategoriesMap } from '../../store/categories/category.selector';
 
 export const categoriesMap: CategoryMap = {
   hats: [
@@ -58,6 +60,8 @@ export const categoriesMap: CategoryMap = {
 };
 
 const Categories = () => {
+  // const categoriesMap = useSelector(selectCategoriesMap);
+
   return (
     <>
       {Object.keys(categoriesMap).map((title) => {

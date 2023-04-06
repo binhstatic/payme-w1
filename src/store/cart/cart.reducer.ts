@@ -9,7 +9,7 @@ export type CartState = {
 };
 
 export const CART_INITIAL_STATE: CartState = {
-  isCartOpen: true,
+  isCartOpen: false,
   cartItems: [],
 };
 

@@ -1,11 +1,20 @@
 import React from 'react';
 
-import { cartItems } from '../../components/CartDropdown/CartDropDown';
 import CheckoutItem from '../../components/CheckoutItem/CheckoutItem';
 
 import './checkout.scss';
+import {
+  selectCartItems,
+  selectCartTotal,
+} from '../../store/cart/cart.selector';
+import { useSelector } from 'react-redux';
+import Button, { BUTTON_TYPE_CLASSES } from '../../components/Button/Button';
+import { toast } from 'react-toastify';
 
 const Checkout = () => {
+  const cartItems = useSelector(selectCartItems);
+  const cartTotal = useSelector(selectCartTotal);
+
   return (
     <div className='checkout'>
       <div className='checkout__header'>
@@ -28,7 +37,13 @@ const Checkout = () => {
       {cartItems.map((cartItem) => (
         <CheckoutItem key={cartItem.id} cartItem={cartItem} />
       ))}
-      <span className='checkout__total'>Total: $1222</span>
+      <span className='checkout__total'>Total: ${cartTotal}</span>
+      <Button
+        buttonType={BUTTON_TYPE_CLASSES.inverted}
+        onClick={() => toast.success('pay success, thank u')}
+      >
+        Pay now
+      </Button>
     </div>
   );
 };
