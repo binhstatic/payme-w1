@@ -1,33 +1,11 @@
-import { useEffect, useState } from 'react';
-import {
-  getFirebaseToken,
-  onForegroundMessage,
-} from '../../utils/firebase/firebase.utils';
-import { toast } from 'react-toastify';
-import Notifications from '../Notifications/Notifications';
+import { useState } from 'react';
+import { getFirebaseToken } from '../../utils/firebase/firebase.utils';
 
 const NotificationBanner = () => {
   console.log(Notification.permission);
   const [showNotificationBanner, setShowNotificationBanner] = useState(
     Notification.permission === 'default'
   );
-
-  useEffect(() => {
-    onForegroundMessage()
-      .then((payload) => {
-        console.log('Received foreground message: ', payload);
-        const {
-          notification: { title, body },
-        } = payload;
-        toast(<Notifications title={title} body={body} />);
-      })
-      .catch((err) =>
-        console.log(
-          'An error occured while retrieving foreground message. ',
-          err
-        )
-      );
-  }, []);
 
   const handleGetFirebaseToken = () => {
     getFirebaseToken()
