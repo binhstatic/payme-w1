@@ -1,9 +1,9 @@
-type NotificationProps = {
+type NotificationsProps = {
   title: string;
   body: string;
 };
 
-const Notification = ({ title, body }: NotificationProps) => {
+const Notifications = ({ title, body }: NotificationsProps) => {
   return (
     <div className='push-notification'>
       <h2 className='push-notification__title'>{title}</h2>
@@ -12,4 +12,4 @@ const Notification = ({ title, body }: NotificationProps) => {
   );
 };
 
-export default Notification;
+export default Notifications;

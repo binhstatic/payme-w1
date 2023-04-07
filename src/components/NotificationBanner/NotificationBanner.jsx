@@ -4,9 +4,10 @@ import {
   onForegroundMessage,
 } from '../../utils/firebase/firebase.utils';
 import { toast } from 'react-toastify';
-import Notification from '../Notification/Notification';
+import Notifications from '../Notifications/Notifications';
 
 const NotificationBanner = () => {
+  console.log(Notification.permission);
   const [showNotificationBanner, setShowNotificationBanner] = useState(
     Notification.permission === 'default'
   );
@@ -18,7 +19,7 @@ const NotificationBanner = () => {
         const {
           notification: { title, body },
         } = payload;
-        toast(<Notification title={title} body={body} />);
+        toast(<Notifications title={title} body={body} />);
       })
       .catch((err) =>
         console.log(
