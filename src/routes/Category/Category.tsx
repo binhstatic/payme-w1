@@ -1,5 +1,6 @@
-import { useParams } from 'react-router-dom';
+import { useMemo } from 'react';
 import { useSelector } from 'react-redux';
+import { useParams } from 'react-router-dom';
 
 import ProductCard from '../../components/ProductCard/ProductCard';
 import Spinner from '../../components/Spinner/Spinner';
@@ -10,7 +11,6 @@ import {
 } from '../../store/categories/category.selector';
 
 import './category.scss';
-import { useEffect, useMemo, useState } from 'react';
 
 type CategoryRouteParams = {
   category: string;
