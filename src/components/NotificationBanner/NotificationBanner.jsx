@@ -43,15 +43,19 @@ const NotificationBanner = () => {
   };
 
   return (
-    <div className='notification-banner'>
-      <a
-        href='#'
-        className='notification-banner__link'
-        onClick={handleGetFirebaseToken}
-      >
-        Click here to enable push notifications
-      </a>
-    </div>
+    <>
+      {showNotificationBanner && (
+        <div className='notification-banner'>
+          <a
+            href='#'
+            className='notification-banner__link'
+            onClick={handleGetFirebaseToken}
+          >
+            Click here to enable push notifications
+          </a>
+        </div>
+      )}
+    </>
   );
 };
 
